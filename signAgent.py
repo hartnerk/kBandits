@@ -1,4 +1,6 @@
 from tf_agents.agents import tf_agent
+import tensorflow as tf
+from twoWaySignPolicy import TwoWaySignPolicy
 
 class SignAgent(tf_agent.TFAgent):
   def __init__(self):
@@ -39,5 +41,3 @@ class SignAgent(tf_agent.TFAgent):
     new_situation = tf.cast(new_situation, tf.int32)
     tf.compat.v1.assign(self._situation, new_situation)
     return tf_agent.LossInfo((), ())
-
-sign_agent = SignAgent()

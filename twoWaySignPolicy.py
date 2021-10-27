@@ -1,3 +1,11 @@
+
+import tensorflow as tf
+from tf_agents.policies import tf_policy
+from tf_agents.specs import tensor_spec
+
+from tf_agents.trajectories import policy_step
+from tf_agents.trajectories import time_step as ts
+
 class TwoWaySignPolicy(tf_policy.TFPolicy):
   def __init__(self, situation):
     observation_spec = tensor_spec.BoundedTensorSpec(
